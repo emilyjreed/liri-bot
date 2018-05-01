@@ -1,13 +1,13 @@
-#LIRI-BOT
+# LIRI-BOT
 
 LIRI is a Language Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data.
 
-###First Steps:
+### First Steps:
 -git clone <repository>
 -cd <repository>
 -run <$ npm install> in command line
 
-####LIRI takes in the following commands:
+#### LIRI takes in the following commands:
 
 <$ node liri.js my-tweets> This pulls my top 20 tweets from Twitter.
 
