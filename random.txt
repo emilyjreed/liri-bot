@@ -1,0 +1,4 @@
+spotify-this-song,"I Want it That Way"
+spotify-this-song,"Thong song"
+spotify-this-song,"Rhinestone Cowboy"
+spotify-this-song,"Kiss from a Rose"
