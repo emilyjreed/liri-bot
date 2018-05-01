@@ -19,7 +19,9 @@ function searchedData(err, data, response) {
     for (var i of data) {
         console.log(i.created_at + "\n");
         console.log(i.text + "\n\n----------------\n");
-
+        fs.appendFile('log.txt', i.created_at + "\n" + i.text + "\n----------------\n", function (err) {
+            if (err) throw err;
+        })
     }
 };
 
@@ -36,6 +38,9 @@ function spotifyIt(music) {
             console.log(songInfo.album.name);
             console.log(songInfo.external_urls.spotify);
         }
+        fs.appendFile('log.txt',songInfo.artists[0].name + "\n" + songInfo.name + "\n" + songInfo.album.name + "\n" + songInfo.external_urls.spotify + "\n----------------\n", function (err) {
+            if (err) throw err;
+        })
     })
 };
 
@@ -55,6 +60,9 @@ function movieThis(movie) {
             console.log(JSON.parse(body).Plot);
             console.log(JSON.parse(body).Actors);
         }
+        fs.appendFile('log.txt',JSON.parse(body).Title + "\n" + JSON.parse(body).Year + "\n" + JSON.parse(body).Ratings[0].Source + ': ' + JSON.parse(body).Ratings[0].Value + "\n" + JSON.parse(body).Ratings[1].Source + ': ' + JSON.parse(body).Ratings[1].Value + "\n" + JSON.parse(body).Country + "\n" + JSON.parse(body).Language + "\n" + JSON.parse(body).Plot + "\n" + JSON.parse(body).Actors + "\n----------------\n", function (err) {
+            if (err) throw err;
+        })
     }
     )
 };
@@ -66,13 +74,14 @@ function doIt() {
         for (var i of fileContents) {
             var line = i.split(",");
             if (line[0] === 'do-what-it-says') {
-                console.log('You have just f**ked up')
+                console.log('You have just f**ked up');
+                fs.appendFileSync('log.txt', 'You have just f**ked up' + "\n----------------\n");
                 process.exit(1);
             }
             mainSwitch(line);
         }
     });
-}
+};
 
 function mainSwitch(parameters) {
     switch (parameters[0]) {
