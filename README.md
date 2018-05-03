@@ -28,6 +28,10 @@ TWITTER_ACCESS_TOKEN_SECRET=your-twitter-access-token-secret
 
 '''
 
+**To get Twitter API key visit:** 'https://apps.twitter.com/app/new'
+
+**To get Spotify API key visit:** 'https://developer.spotify.com/my-applications/#!/'
+
 
 ### LIRI takes in the following commands:
 
